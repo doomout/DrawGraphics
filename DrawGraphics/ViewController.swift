@@ -55,8 +55,26 @@ class ViewController: UIViewController {
         
     }
     
-    
+    //원 및 타원 그리기
     @IBAction func btnDrawCircle(_ sender: UIButton) {
+        UIGraphicsBeginImageContext(imgView.frame.size)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        context.setLineWidth(2.0)
+        context.setStrokeColor(UIColor.red.cgColor)
+        
+        // xy 좌표에서 시작하고 폭이 200, 높이가 100인 사각형 안에 내접하는 타원을 그린다.
+        context.addEllipse(in: CGRect(x: 70, y: 50, width: 200, height: 100))
+        context.strokePath()
+        
+        context.setLineWidth(5.0)
+        context.setStrokeColor(UIColor.green.cgColor)
+        //xy 좌표에서 시작하고 폭 200, 높이 200인 사각형 안에 있는 원을 그린다.
+        context.addEllipse(in: CGRect(x: 70, y: 200, width: 200, height: 200))
+        context.strokePath()
+        
+        imgView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
     
     

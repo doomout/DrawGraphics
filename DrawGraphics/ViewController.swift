@@ -1,19 +1,29 @@
-//
-//  ViewController.swift
-//  DrawGraphics
-//
-//  Created by 현구김 on 2022/12/28.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var imgView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnDrawLine(_ sender: Any) {
+    }
+    
+    @IBAction func btnDrawRectangle(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func btnDrawCircle(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func btnDrawArc(_ sender: UIButton) {
+    }
+    
+    @IBAction func btnDrawFill(_ sender: UIButton) {
+    }
+    
 }
 

@@ -4,7 +4,7 @@
 
 스위프트 문법  
 
-//그림 그리기 시작. 
+//그림 그리기 시작.    
 UIGraphicsBeginImageContext(imgView.frame.size)  
     let context = UIGraphicsGetCurrentContext()!    
         

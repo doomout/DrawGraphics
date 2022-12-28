@@ -7,7 +7,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    //선 그리기
+    //선, 삼각형 그리기
     @IBAction func btnDrawLine(_ sender: Any) {
         //콘텍스트를 이미지 뷰의 크기와 같게 생성
         UIGraphicsBeginImageContext(imgView.frame.size)
@@ -38,8 +38,21 @@ class ViewController: UIViewController {
         imgView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext() //그리기 종료
     }
-    
+    //사각형 그리기
     @IBAction func btnDrawRectangle(_ sender: UIButton) {
+        UIGraphicsBeginImageContext(imgView.frame.size)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        context.setLineWidth(2.0) //선 굵기
+        context.setStrokeColor(UIColor.red.cgColor) //선 색
+        
+        //좌표(70, 100)에서 시작하고 폭 200px, 높이 200px 인 사각형을 그린다.
+        context.addRect(CGRect(x: 70, y: 100, width: 200, height: 200))
+        context.strokePath()
+        
+        imgView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
     }
     
     
